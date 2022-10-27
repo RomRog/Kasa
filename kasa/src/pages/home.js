@@ -9,8 +9,6 @@ class Home extends Component {
     render() {
         return (
             <div className="home">
-                <Logo />
-                <Navigation />
                 <BackgroundHome />
                 <GridHomePage />
                 <Footer />

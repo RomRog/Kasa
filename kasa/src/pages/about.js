@@ -13,7 +13,6 @@ class About extends Component {
                 <Navigation />
                 <BackgroundAbout />
                 <AboutMainText />
-                <Footer />
             </div>
         )
     }
