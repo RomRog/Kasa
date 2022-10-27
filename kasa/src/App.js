@@ -7,13 +7,13 @@ import LogementDetails from './pages/logementdetails';
 function App() {
   return (
       <BrowserRouter>
-      <About/>
       <Home/>
+      <About/>
         <Routes>
           <Route path="/home" exact component={Home}/>
-          <Route path="/a-propos" component={About}/>
           <Route path="/logement/:id" exact strict render={(props) => <LogementDetails {...props}/>}/>
           <Route component={NotFound}/>
+          <Route path="/a-propos" component={About}/>
         </Routes>
       </BrowserRouter>
   );
