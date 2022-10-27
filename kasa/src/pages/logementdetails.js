@@ -50,7 +50,7 @@ class LogementDetails extends Component {
 
             return (
 
-                <div className="logementdetails">
+                <div className="home">
                     <Logo />
                     <Navigation />
                     <SliderDisplay logementData={logementData} />

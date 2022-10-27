@@ -1,14 +1,16 @@
 import Home from './pages/home';
 import About from './pages/about';
 import NotFound from './pages/notfound';
-import { BrowserRouter, Routes, Route } from "react-router-dom"
 import LogementDetails from './pages/logementdetails';
+import { BrowserRouter, Routes, Route } from "react-router-dom"
+
 
 function App() {
   return (
       <BrowserRouter>
       <Home/>
       <About/>
+      <NotFound/>
         <Routes>
           <Route path="/home" exact component={Home}/>
           <Route path="/logement/:id" exact strict render={(props) => <LogementDetails {...props}/>}/>

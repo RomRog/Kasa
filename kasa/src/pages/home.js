@@ -1,4 +1,5 @@
 import { Component } from 'react';
+import Footer from '../components/footer';
 import BackgroundHome from '../components/home/background-home';
 import GridHomePage from '../components/home/gril-home-page';
 import Logo from '../components/logo';
@@ -12,6 +13,7 @@ class Home extends Component {
                 <Navigation />
                 <BackgroundHome />
                 <GridHomePage />
+                <Footer />
             </div>
         )
     }
