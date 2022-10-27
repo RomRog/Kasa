@@ -6,8 +6,9 @@ import LogementDetails from './pages/logementdetails';
 
 function App() {
   return (
-    <div className="App">
       <BrowserRouter>
+      <About/>
+      <Home/>
         <Routes>
           <Route path="/home" exact component={Home}/>
           <Route path="/a-propos" component={About}/>
@@ -15,7 +16,6 @@ function App() {
           <Route component={NotFound}/>
         </Routes>
       </BrowserRouter>
-    </div>
   );
 }
 
