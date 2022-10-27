@@ -1,4 +1,3 @@
-
 import Home from './pages/home';
 import About from './pages/about';
 import NotFound from './pages/notfound';
@@ -8,7 +7,6 @@ import LogementDetails from './pages/logementdetails';
 function App() {
   return (
     <div className="App">
-      <Home/>
       <BrowserRouter>
         <Routes>
           <Route path="/home" exact component={Home}/>
