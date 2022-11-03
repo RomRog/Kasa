@@ -7,18 +7,22 @@ import { BrowserRouter, Routes, Route } from "react-router-dom"
 
 function App() {
   return (
+    <div className='App'>
       <BrowserRouter>
-      <Home/>
-      <About/>
-      <NotFound/>
+        <Home />
+        <About />
+        <NotFound />
         <Routes>
-          <Route path="/home" exact component={Home}/>
-          <Route path="/logement/:id" exact strict render={(props) => <LogementDetails {...props}/>}/>
-          <Route component={NotFound}/>
-          <Route path="/a-propos" component={About}/>
+          <Route path="/home" exact component={Home} />
+          <Route path="/logement/:id" exact strict render={(props) => <LogementDetails {...props} />} />
+          <Route component={NotFound} />
+          <Route path="/a-propos" component={About} />
         </Routes>
       </BrowserRouter>
+    </div>
   );
 }
 
 export default App;
+
+
