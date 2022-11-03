@@ -9,14 +9,11 @@ function App() {
   return (
     <div className='App'>
       <BrowserRouter>
-        <Home />
-        <About />
-        <NotFound />
         <Routes>
-          <Route path="/home" exact component={Home} />
-          <Route path="/logement/:id" exact strict render={(props) => <LogementDetails {...props} />} />
-          <Route component={NotFound} />
-          <Route path="/a-propos" component={About} />
+          <Route path="/" element={<Home/>} />
+          <Route path="/logement/:id" element={<LogementDetails/>} />
+          <Route element={<NotFound/>} />
+          <Route path="/a-propos" element={<About/>} />
         </Routes>
       </BrowserRouter>
     </div>
