@@ -5,10 +5,10 @@ class Navigation extends Component {
     render() {
         return (
             <div className="navigation">
-                <NavLink exact to="/" activeClassName="nav-active">
+                <NavLink exact="true" to="/" activeclassname="nav-active">
                     Accueil
                 </NavLink>
-                <NavLink exact to="/a-propos" activeClassName="nav-active">
+                <NavLink exact="true" to="/a-propos" activeclassname="nav-active">
                     A propos
                 </NavLink>
             </div>

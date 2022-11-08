@@ -10,7 +10,9 @@ import SliderDisplay from '../components/logementdetails/sliderdisplay';
 class LogementDetails extends Component {
 
     constructor(props) {
+        
         super(props);
+        console.log(this.props.match.params)
         this.state = {
             logementData: {},
             error: null,
@@ -19,6 +21,7 @@ class LogementDetails extends Component {
     }
 
     componentDidMount() {
+        console.log(this)
         const { id } = this.props.match.params
 
         fetch(process.env.PUBLIC_URL + '/annonces.json')
