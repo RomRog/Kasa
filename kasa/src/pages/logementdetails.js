@@ -12,7 +12,6 @@ class LogementDetails extends Component {
     constructor(props) {
         
         super(props);
-        console.log(this.props.match.params)
         this.state = {
             logementData: {},
             error: null,
@@ -20,16 +19,19 @@ class LogementDetails extends Component {
         };
     }
 
-    componentDidMount() {
-        console.log(this)
-        const { id } = this.props.match.params
+    async componentDidMount() {
+        const { id } = window.location.href.substring(window.location.href.lastIndexOf('/') +1 );
 
-        fetch(process.env.PUBLIC_URL + '/annonces.json')
+        const logData = await fetch(process.env.PUBLIC_URL + '/annonces.json')
             .then(res => res.json())
             .then((result) => {
-                this.setState({
-                    isLoaded: true,
-                    logementData: result.find((annonce) => annonce.id === id)
+                console.log(result)
+                result.forEach(function(el){
+                    console.log(el)
+                    if(el.if == id){
+                        console.log(el)
+                       return el
+                    }
                 })
             },
                 (error) => {
@@ -39,6 +41,11 @@ class LogementDetails extends Component {
                     });
                 }
             )
+            console.log(logData)
+            this.setState({
+                isLoaded: true,
+                logementData: logData
+            })
     }
 
     render() {
