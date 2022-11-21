@@ -19,7 +19,7 @@ class LogementDetailsWrapper extends Component {
             btn.style.display = "block";
         }
         const btnToDisplay = document.querySelectorAll(".about-Details");
-        btnToDisplay.forEach(btn => btn.addEventListener('click', displayText()));
+        btnToDisplay.forEach(btn => btn.addEventListener('click', displayText(btn)));
 
         return (
             this.state.isLoaded ? (

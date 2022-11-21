@@ -10,7 +10,7 @@ import SliderDisplay from '../components/logementdetails/sliderdisplay';
 class LogementDetails extends Component {
 
     constructor(props) {
-        
+
         super(props);
         this.state = {
             logementData: {},
@@ -20,19 +20,20 @@ class LogementDetails extends Component {
     }
 
     async componentDidMount() {
-        const { id } = window.location.href.substring(window.location.href.lastIndexOf('/') +1 );
+        const { id } = window.location.href.substring(window.location.href.lastIndexOf('/') + 1);
 
         const logData = await fetch(process.env.PUBLIC_URL + '/annonces.json')
             .then(res => res.json())
             .then((result) => {
                 console.log(result)
-                result.forEach(function(el){
+                let logementData = null;
+                result.forEach(function (el) {
                     console.log(el)
-                    if(el.if == id){
-                        console.log(el)
-                       return el
+                    if (el.if == id) {
+                        logementData = el
                     }
                 })
+                return logementData;
             },
                 (error) => {
                     this.setState({
@@ -41,11 +42,11 @@ class LogementDetails extends Component {
                     });
                 }
             )
-            console.log(logData)
-            this.setState({
-                isLoaded: true,
-                logementData: logData
-            })
+        console.log(logData)
+        this.setState({
+            isLoaded: true,
+            logementData: logData
+        })
     }
 
     render() {
