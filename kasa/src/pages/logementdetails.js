@@ -20,7 +20,7 @@ class LogementDetails extends Component {
     }
 
     async componentDidMount() {
-        const { id } = window.location.href.substring(window.location.href.lastIndexOf('/') + 1);
+        const id = window.location.href.substring(window.location.href.lastIndexOf('/') + 1);
 
         const logData = await fetch(process.env.PUBLIC_URL + '/annonces.json')
             .then(res => res.json())
@@ -29,7 +29,7 @@ class LogementDetails extends Component {
                 let logementData = null;
                 result.forEach(function (el) {
                     console.log(el)
-                    if (el.if == id) {
+                    if (el.id == id) {
                         logementData = el
                     }
                 })
